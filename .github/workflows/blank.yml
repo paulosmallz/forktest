@@ -5,6 +5,7 @@ env:
 
 on:
   workflow_dispatch:
+  push:
   pull_request:
     branches:
       - main # ignore branches that are in the time-rs/time repo, as they're included in push
@@ -19,7 +20,7 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'pull_request' }}
+    if: ${{ (github.event_name == 'pull_request' && github.event.pull_request.head.repo.fork) | github.event_name == 'push' }}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
