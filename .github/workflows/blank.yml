@@ -5,12 +5,12 @@ env:
 
 on:
   pull_request:
-    branches:
-      - "**:**" # ignore branches that are in the time-rs/time repo, as they're included in push
-    paths-ignore:
-      - "**.md"
-      - LICENSE-Apache
-      - LICENSE-MIT
+#     branches:
+#       - "**:**" # ignore branches that are in the time-rs/time repo, as they're included in push
+#     paths-ignore:
+#       - "**.md"
+#       - LICENSE-Apache
+#       - LICENSE-MIT
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
